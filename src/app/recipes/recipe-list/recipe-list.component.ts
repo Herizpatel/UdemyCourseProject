@@ -10,7 +10,7 @@ export class RecipeListComponent implements OnInit {
   @Output() recipeWasSelected = new EventEmitter<Recipe>();
   recipes: Recipe[] = [
     new Recipe('A Test Recipe', 'A Simple Test', 'https://reluctantentertainer.com/wp-content/uploads/2019/02/Easy-Homemade-Chili-Recipe-6.jpg'),
-    new Recipe('A Test Recipe', 'A Simple Test', 'https://reluctantentertainer.com/wp-content/uploads/2019/02/Easy-Homemade-Chili-Recipe-6.jpg')
+    new Recipe('Another Test Recipe', 'A Simple Test', 'https://reluctantentertainer.com/wp-content/uploads/2019/02/Easy-Homemade-Chili-Recipe-6.jpg')
   ];
 
 
