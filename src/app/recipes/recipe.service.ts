@@ -6,7 +6,7 @@ import {ShoppingListService} from '../shopping-list/shopping-list.service';
 @Injectable()
 export class RecipeService {
 
-  private recipes: Recipe[] = [
+  public recipe: Recipe[] = [
     new Recipe('A Test Recipe',
       'A Simple Test',
       'https://reluctantentertainer.com/wp-content/uploads/2019/02/Easy-Homemade-Chili-Recipe-6.jpg',
@@ -27,11 +27,11 @@ export class RecipeService {
   }
 
   getRecipe() {
-    return this.recipes.slice();
+    return this.recipe.slice();
   }
 
   getRecipes(index: number){
-    return this.recipes.slice()[index];
+    return this.recipe.slice()[index];
   }
   addIngredientsToShoppingList(ingredients: Ingredient[]){
     this.slService.addIngredients(ingredients);
