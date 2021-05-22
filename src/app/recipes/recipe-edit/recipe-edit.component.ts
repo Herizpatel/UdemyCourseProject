@@ -40,20 +40,24 @@ export class RecipeEditComponent implements OnInit {
     this.onCancel();
   }
 
-  onCancel(){
+  onCancel(): void{
     this.router.navigate(['../'], {relativeTo: this.route});
   }
 
 
-  onAddIngredient(){
-    (<FormArray>this.recipeForm.get('Ingredients')).push(
+  onAddIngredient(): void{
+    (<FormArray> this.recipeForm.get('ingredients')).push(
       new FormGroup({
-        'name': new FormControl(null,   Validators.required),
-        'amount': new FormControl(null,[
+        'name': new FormControl(null, Validators.required),
+        'amount': new FormControl(null, [
           Validators.required, Validators.pattern(/^[1-9]+[0-9]*$/)
         ])
       })
     );
+  }
+
+  onDeleteIngredient(index: number): void{
+    (<FormArray> this.recipeForm.get('ingredients')).removeAt(index);
   }
 
   private initForm(){
